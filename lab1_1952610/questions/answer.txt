@@ -1,0 +1,45 @@
+1. What are the advantages of Makefile? Give example?
+Makefile helps us to compile codes quickly.
+It just compiles files which are really needed to compile with the help of dependencies.
+Therefore, it reduce the time consume when we compile code. Beside that it helps us to easily
+manage files of code.
+Example:
+We have about hundreds of source file need to compile, we cannot always run command for all of these file(time consuming).
+If our main.c include some library and 2 files A.h, B.h. When A.h changes, we just have to recompile A.c, not all 
+the source files and library. We can manage this by setting rules in Makefile.
+
+
+2.In case of code files located in different places,
+how can we write a Makaefile?
+The first solution is to specify a full path of all the files(targets, dependencies).
+ We can also use Macro for the path to the folder.
+The second solution is to have the "cd" command before every compile command in the rules, 
+so we first cd to the folder which contains source files and then compile them.
+
+
+3. What is the output will be at LINE A? Explain your answer?
+
+#include <sys/types.h>
+#include <stdio.h>
+#include <unistd.h>
+int value = 5 ;
+int main()
+{
+	pid t pid ;
+	pid = fork() ;
+	if(pid == 0) { /∗ child process ∗/
+		value += 15;
+		return 0 ;
+	}	else if (pid > 0) { /∗ parent process ∗/
+	wait (NULL) ;
+	printf ( "PARENT:␣value␣=␣%d" , value); /∗ LINE A ∗/
+	return 0 ;
+	}
+}
+
+THE OUTPUT IS: "PARENT: value = 5"
+EXPLANATION: Each process (child and parent) runs independently.
+The values of the two processes do not affect each other.
+In the child process: the value = 5+15
+In the parent process: the value = 5
+

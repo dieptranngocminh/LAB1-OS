@@ -1,0 +1,20 @@
+    1  mkdir lab1_1952610
+    2  ls
+    3  cd lab1_1952610
+    4  mkdir questions
+    5  cd questions
+    6  nano answer.txt
+    7  ls
+    8 nano answer.txt
+    9  cd ..
+   10  mkdir basic
+   11  cd basic
+   12  mkdir 1952610
+   13  cd 1952610
+   14  nano example.txt
+   15  ls
+   16  cat example.txt
+   17  head -5 example.txt
+   18  tail -5 example.txt
+   19  1952610-history.txt
+   20  history > 1952610-history.txt
